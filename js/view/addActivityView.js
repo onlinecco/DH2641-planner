@@ -1,0 +1,3 @@
+var addActivityView = function(container){
+	
+}

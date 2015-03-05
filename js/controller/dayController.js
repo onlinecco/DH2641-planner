@@ -1,0 +1,3 @@
+var dayController = function(view){
+	
+}

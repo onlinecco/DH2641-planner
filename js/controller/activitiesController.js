@@ -1,0 +1,3 @@
+var activitiesController = function(view){
+	
+}
