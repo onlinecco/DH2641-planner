@@ -22,34 +22,57 @@ html, body{
 	padding-top: 100px;
 	padding-bottom: 100px;
 	position:absolute;
-
-}
-
-.samel{
-
+	white-space: nowrap;
 	display: inline-block;
+
 }
+
 #activitiesView{
 	margin-left: 50px;
 	margin-right: 50px;
 	background-color:blue;
 	height: 100%;
 	width: 250px;
-	float:left;
+	display: inline-block;
 }
 
+.info{
+	width: 70%;
+	padding: 0;
+	display: inline-block;
+	height: 84%;
+}
+
+.schedule{
+	width: auto;
+}
+.startTime{
+	width: 100%;
+}
+
+.graph{
+	display: inline-block;
+	width: 30%;
+	height: 100%;
+}
+
+.form-group{
+	margin: 0;
+}
 #dayViewWrapper{
 
 	width: auto;
 	height: 100%;
-	float: left;
+	display: inline-block;
 	background-color: purple;
 }
 .dayView{
 	background-color:yellow;
 	width: 250px;
 	height: 100%;
-	float: left;
+	display: inline-block;
+	margin-right: 20px;
+	padding: 0;
 
 }
 
