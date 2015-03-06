@@ -53,6 +53,15 @@ html, body{
 
 }
 
+#addADay{
+	background-color: green;
+	position: absolute;
+	margin-left: 50px;
+	bottom:50%;
+	color: white;
+	width: 150px;
+	height: 100px;
+}
 
 #addActivityView{
 
