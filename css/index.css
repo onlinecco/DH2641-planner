@@ -27,14 +27,17 @@ html, body{
 
 }
 
+
 #activitiesView{
 	margin-left: 50px;
 	margin-right: 50px;
-	background-color:blue;
+	background-color:white;
+	border:dashed;
 	height: 100%;
 	width: 250px;
 	display: inline-block;
 }
+
 
 .info{
 	width: 70%;
@@ -59,6 +62,36 @@ html, body{
 .form-group{
 	margin: 0;
 }
+
+
+/*/single activity/*/
+.activity{
+	padding:5px;
+}
+.activity #name{
+	border: solid 2px;
+}
+
+/*/presentation = blue; group work = red; discussion = green; break = yellow/*/
+.presentation #name{	
+	border-color:blue; 
+	background-color:lightblue;
+}
+.groupwork #name{	
+	border-color:red; 
+	background-color:lightcoral;
+}
+.discussion #name{	
+	border-color:green; 
+	background-color:lightgreen;
+}
+.break #name{	
+	border-color:yellow; 
+	background-color:lightyellow;
+}
+
+
+
 #dayViewWrapper{
 
 	width: auto;
@@ -76,6 +109,15 @@ html, body{
 
 }
 
+#addADay{
+	background-color: green;
+	position: absolute;
+	margin-left: 50px;
+	bottom:50%;
+	color: white;
+	width: 150px;
+	height: 100px;
+}
 
 #addActivityView{
 
