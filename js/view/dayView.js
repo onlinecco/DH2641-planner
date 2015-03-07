@@ -11,5 +11,11 @@ var dayView = function(container){
 	}
 
 	this.addDay();
+		this.addDay();
+			this.addDay();
+				this.addDay();
+					this.addDay();
+						this.addDay();
+						
 
 }
