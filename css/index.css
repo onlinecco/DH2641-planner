@@ -125,6 +125,23 @@ html, body{
 	height: 100px;
 }
 
+#addAnActivity{
+	background-color: green;
+	color: white;
+	width: 150px;
+	height: 30px;
+}
+
+#createActivity{
+	background-color: green;
+	color: white;
+}
+
+#cancelActivity{
+	background-color: red;
+	color: white;
+}
+
 #addActivityView{
 
 }

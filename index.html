@@ -50,7 +50,53 @@
     </div>
 
 	<div id="mainView" class="container">
+        <div id="addActivityView" class="container">
+        <button id="addAnActivity" type="button" class="btn btn-primary btn">+ Add an activity</button>
+        </div>
+        <div id="addActivityForm" class="eventContainer">
+            <div class="eventContainer info">
+              <div class="form-horizontal times">
 
+                <div class="form-group"> 
+                <div class="col-sm-7 col-sm">
+                <span>Enter your activity details</span>
+                  </div>
+                  <div class="col-sm-7 col-sm">
+                    <input type="text" class="form-control enterName" placeholder="Name">
+                  </div>
+                  <div class="col-sm-7 col-sm">
+                    <input type="number" class="form-control enterTime" placeholder="Length in minutes">
+                  </div>
+                  <div class="col-sm-1 col-sm">
+                  <span>In minutes</span>
+                  </div>
+                  <div class="col-sm-7 col-sm">
+                    <select>
+                        <option value="" disabled selected>Type</option>
+                        <option value="presentation">Presentation</option>
+                        <option value="groupWork">Group work</option>
+                        <option value="discussion">Discussion</option>
+                        <option value="break">Break</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-7 col-sm">
+                    <input type="text" class="form-control enterDescription" placeholder="Description">
+                  </div>
+                  <div class="col-sm-2 col-sm">
+                  <button id="cancelActivity" type="button" class="btn btn">Cancel</button>
+                  </div>
+                  <div class="col-sm-2 col-sm">
+                  <button id="createActivity" type="button" class="btn btn">Create</button>
+                  </div>
+                </div>
+
+              </div>
+              <div class="container graph">
+
+              </div>
+            </div>
+            <div class="container schedule"></div>
+        </div>
 		<div id="activitiesView" class="container">
 		</div>
 		<div id="dayViewWrapper" class="container">
@@ -89,8 +135,7 @@
 		
 	</div>
 
-	<div id="addActivityView" class="container">
-	</div>
+	
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
