@@ -1,5 +1,5 @@
-var mainController = function(mainView, dayView){
-	mainView.addDayButton.onClick(function(){
-		dayView.addDay();
-	})
+var mainController = function(mainV, dayV){
+	mainV.addDayButton.click(function(){
+		dayV.addDay();
+	});
 }
