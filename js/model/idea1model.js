@@ -14,8 +14,9 @@ var act3 = new Activity("some activity",20,1,"Some description);
 var act4 = new Activity("some activity",20,1,"Some description);
 
 addParkedActivity(act1, 1);
-addParkedActivity(act1, 1);
-addParkedActivity(act1, 1);
+addParkedActivity(act1, 2);
+addParkedActivity(act1, 3);
+addParkedActivity(act1, 4);
 
 
 
