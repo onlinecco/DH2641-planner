@@ -7,16 +7,7 @@ var ActivityType = ["Presentation","Group Work","Discussion","Break"]
 // When you want to create a new activity you just call
 // var act = new Activity("some activity",20,1,"Some description);
 
-// some activities for testing the waitinglist
-var act1 = new Activity("some activity",20,1,"Some description);
-var act2 = new Activity("some activity",20,1,"Some description);
-var act3 = new Activity("some activity",20,1,"Some description);
-var act4 = new Activity("some activity",20,1,"Some description);
 
-Model().addParkedActivity(act1);
-Model().addParkedActivity(act2);
-Model().addParkedActivity(act3);
-Model().addParkedActivity(act4);
 
 
 

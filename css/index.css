@@ -130,6 +130,8 @@ html, body{
 	color: white;
 	width: 150px;
 	height: 30px;
+	margin-top: -40px;
+	margin-left: 60px;
 }
 
 #createActivity{
