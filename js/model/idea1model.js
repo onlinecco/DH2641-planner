@@ -13,10 +13,10 @@ var act2 = new Activity("some activity",20,1,"Some description);
 var act3 = new Activity("some activity",20,1,"Some description);
 var act4 = new Activity("some activity",20,1,"Some description);
 
-addParkedActivity(act1);
-addParkedActivity(act2);
-addParkedActivity(act3);
-addParkedActivity(act4);
+Model().addParkedActivity(act1);
+Model().addParkedActivity(act2);
+Model().addParkedActivity(act3);
+Model().addParkedActivity(act4);
 
 
 
