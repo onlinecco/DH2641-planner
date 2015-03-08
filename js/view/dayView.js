@@ -10,12 +10,6 @@ var dayView = function(container){
 		newDay.append()
 	}
 
-	this.addDay();
-		this.addDay();
-			this.addDay();
-				this.addDay();
-					this.addDay();
-						this.addDay();
-						
+
 
 }
