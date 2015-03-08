@@ -10,7 +10,11 @@ var dayView = function(container){
 		newDay.append()
 	}
 
+<<<<<<< HEAD
 						
+=======
+
+>>>>>>> origin/master
 
 
 }
