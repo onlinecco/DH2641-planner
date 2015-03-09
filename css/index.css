@@ -86,7 +86,7 @@ html, body{
 }
 
 .activity.over {
-  border-bottom: 2px dashed #000;
+  border: 2px dashed #000;
 }
 
 .activity #length{
