@@ -35,7 +35,7 @@ var activitiesController = function(view){
 		
 		function handleDrop(e) {
 		  // this / e.target is current target element.
-		
+			
 		  if (e.stopPropagation) {
 			e.stopPropagation(); // stops the browser from redirecting.
 		  }
@@ -67,10 +67,6 @@ var activitiesController = function(view){
 			col.classList.remove('over');
 		  });
 		  this.style.opacity = '1';
-		  
-		  //update view
-		  
-		  //...
 		}
 		
 		var cols = document.querySelectorAll('.activity');
