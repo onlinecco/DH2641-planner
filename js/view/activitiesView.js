@@ -80,6 +80,9 @@ var activitiesView = function(container){
 				case 3:
 					activity.attr("class","row activity break");
 					break;
+				default:
+					activity.attr("class","row activity ");
+					break;
 			}
 			
 			
