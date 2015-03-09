@@ -8,9 +8,6 @@ var ActivityType = ["Presentation","Group Work","Discussion","Break"]
 // var act = new Activity("some activity",20,1,"Some description);
 
 
-
-
-
 function Activity(name,length,typeid,description){
 	var _name = name;
 	var _length = length;
@@ -237,6 +234,13 @@ var model = new Model();
 
 // you can use this method to create some test data and test your implementation
 function createTestData(){
+	
+	model.addParkedActivity(new Activity("Introduction",10,0,""));
+	model.addParkedActivity(new Activity("Groupwork",20,1,""));
+	model.addParkedActivity(new Activity("Discussion",50,2,""));
+	model.addParkedActivity(new Activity("Break",30,3,""));
+	
+	
 	model.addDay();
 	model.addActivity(new Activity("Introduction",10,0,""),0);
 	model.addActivity(new Activity("Idea 1",30,0,""),0);
