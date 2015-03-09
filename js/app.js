@@ -9,7 +9,7 @@ $(function() {
 	var addActivityContr = new addActivityController(addActivity);
 	
 	var main = new mainView($("#mainView"));
-	var mainContr = new mainController(main,day,addActivity);
+	var mainContr = new mainController(main,day,addActivityContr);
 
 	var activities = new activitiesView($("#activitiesView"));
 	var activitiesContr = new activitiesController(activities);
