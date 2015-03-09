@@ -8,6 +8,9 @@ var activitiesView = function(container){
 		//presentation = blue; group work = red; discussion = green; break = yellow
 		activity.attr("id",i); //depends on position in the list of all added activities (model.id)
 		
+		//drag and drop functionality
+		activity.attr("draggable","true");
+		
 		switch (model.parkedActivities[i].getTypeId()) {
 			case 0:
 				activity.attr("class","row activity presentation");
@@ -37,6 +40,7 @@ var activitiesView = function(container){
 		//Set the initial values of the components
 		this.length.html(model.parkedActivities[i].getLength());		this.length.append(" min");
 		this.name.html(model.parkedActivities[i].getName());
+		
 	
 	}
 
