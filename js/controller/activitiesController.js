@@ -10,6 +10,8 @@ var activitiesController = function(view){
 
 		  e.dataTransfer.effectAllowed = 'move';
 		  e.dataTransfer.setData('text/html', this.innerHTML);
+		  e.dataTransfer.setData('text/class', this.getAttribute("class"));
+		  e.dataTransfer.setData('text/position', this.getAttribute("id"));
 		}
 				
 		function handleDragOver(e) {
@@ -42,7 +44,19 @@ var activitiesController = function(view){
 		  if (dragSrcEl != this) {
 			// Set the source column's HTML to the HTML of the column we dropped on.
 			dragSrcEl.innerHTML = this.innerHTML;
+			dragSrcEl.setAttribute('class', this.getAttribute("class"));
 			this.innerHTML = e.dataTransfer.getData('text/html');
+			this.setAttribute('class', e.dataTransfer.getData('text/class'));
+			
+			// NEEDED?? make changes in the model (maybe only needed for cross div movements)
+			
+			//DOES NOT WORK YET
+			// right now, DnD will switch the 2 divs, while the model moveActivity moves an activity to a certain position and shifts the rest of the activities to the old position (splice and push functions in model)
+			this.oldposition = e.dataTransfer.getData('text/position');
+			this.newposition = this.getAttribute("id");
+			model.moveActivity(null, this.oldposition, null, this.newposition);
+			
+			alert("currect sequence in model: \n" + String(model.parkedActivities[0].getName()) + "\n" + String(model.parkedActivities[1].getName())+ "\n" + String(model.parkedActivities[2].getName())+ "\n" + String(model.parkedActivities[3].getName()));
 		  }
 		
 		  return false;
