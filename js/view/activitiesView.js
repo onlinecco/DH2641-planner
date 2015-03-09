@@ -35,7 +35,7 @@ var activitiesView = function(container){
 		container.append(activity);
 		
 		//Set the initial values of the components
-		this.length.html(model.parkedActivities[i].getLength());
+		this.length.html(model.parkedActivities[i].getLength());		this.length.append(" min");
 		this.name.html(model.parkedActivities[i].getName());
 	
 	}

@@ -75,11 +75,13 @@ html, body{
 
 
 /*/single activity/*/
-.activity{
+.activity #length{
 	padding:5px;
+	padding-left:10px;
 }
 .activity #name{
 	border: solid 2px;
+	padding:5px;
 }
 
 /*/presentation = blue; group work = red; discussion = green; break = yellow/*/
