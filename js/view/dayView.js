@@ -16,6 +16,9 @@ var dayView = function(container){
 
 
 	this.update = function(day){
+
+		if(day == undefined) return;
+		
 		var time = model.days[day]._start;
 
 		this.days[day].find(".startTime").html(model.days[day].getStart());
