@@ -174,7 +174,7 @@ function Model(){
 			}
 			else this.parkedActivities.push(activity);
 		}
-		this.notifyObservers();
+		this.notifyObservers(day);
 	}
 	
 	// add an activity to parked activities

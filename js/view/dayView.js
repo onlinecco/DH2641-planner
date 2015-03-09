@@ -2,8 +2,10 @@ var dayView = function(container){
 	
 	this.days = [];
 
+	model.addObserver(this);
+
 	this.addDay = function(){
-		container.append(" <div id=\"day"+ this.days.length+"\" class=\"container dayView\"> <div class=\"container info\"> <div class=\"form-horizontal times\"> <div class=\"form-group\"> <label class=\"col-sm-4 control-label\">Start time: <\/label> <div class=\"col-sm-7 col-sm-offset-1\"> <input type=\"text\" class=\"form-control startTime\" placeholder=\"08:00\"> <\/div> <\/div> <div class=\"form-group\"> <label class=\"col-sm-4 control-label\">End time: <span><\/span><\/label> <div class=\"col-sm-6 col-sm-offset-2\"> <label class=\"control-label\">00:00<\/label> <\/div> <\/div> <div class=\"form-group\"> <label class=\"col-sm-4 control-label\">Total length:<\/label> <div class=\"col-sm-6 col-sm-offset-2\"> <label class=\"control-label\">0<\/label><span> min<\/span> <\/div> <\/div> <\/div> <div class=\"container graph\"> <\/div> <\/div> <div class=\"container schedule\"><\/div> <\/div>");
+		container.append(" <div id=\"day"+ this.days.length+"\" class=\"container dayView\"> <div class=\"container info\"> <div class=\"form-horizontal times\"> <div class=\"form-group\"> <label class=\"col-sm-4 control-label\">Start time: <\/label> <div class=\"col-sm-7 col-sm-offset-1\"> <input type=\"text\" class=\"form-control startTime\" placeholder=\"08:00\"> <\/div> <\/div> <div class=\"form-group\"> <label class=\"col-sm-4 control-label\">End time: <span><\/span><\/label> <div class=\"col-sm-6 col-sm-offset-2\"> <label class=\"control-label endTime\">00:00<\/label> <\/div> <\/div> <div class=\"form-group\"> <label class=\"col-sm-4 control-label\">Total length:<\/label> <div class=\"col-sm-6 col-sm-offset-2\"> <label class=\"control-label totalLength\">0<\/label><span> min<\/span> <\/div> <\/div> <\/div> <div class=\"container graph\"> <\/div> <\/div> <div class=\"container schedule\"><\/div> <\/div>");
 		this.days.push(container.find("#day"+this.days.length));
 		var newDay = this.days[this.days.length-1];
 
@@ -15,6 +17,10 @@ var dayView = function(container){
 
 	this.update = function(day){
 		var time = model.days[day]._start;
+
+		this.days[day].find(".startTime").html(model.days[day].getStart());
+		this.days[day].find(".endTime").html(model.days[day].getEnd());
+		this.days[day].find(".totalLength").html(model.days[day].getTotalLength());
 
 		for(i = 0; i< model.days[day]._activities.length; i++){
 			var activity = $("<div>");
