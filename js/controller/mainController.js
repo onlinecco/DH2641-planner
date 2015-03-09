@@ -4,16 +4,6 @@ var mainController = function(mainV, dayV, addActivityV){
 		dayV.addDay();
 	});
 	
-	mainV.addActivityButton.click(function(){
-		addActivityV.addActivity();
-	});
-	
-	mainV.cancelActivityButton.click(function(){
-		addActivityV.cancelActivity();
-	});
 
-	mainV.createActivityButton.click(function(){
-		addActivityV.createActivity();
-	});
 
 }
