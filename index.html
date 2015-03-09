@@ -50,54 +50,64 @@
     </div>
 
 	<div id="mainView" class="container">
-        <div id="addActivityView" class="container">
-        <button id="addAnActivity" type="button" class="btn btn-primary btn">+ Add an activity</button>
-        </div>
-        <div id="addActivityForm" class="eventContainer">
-            <div class="eventContainer info">
-              <div class="form-horizontal times">
+
+
+        <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Activity</h4>
+      </div>
+      <div class="modal-body">
+              <div id="addActivityView" class="container">
+            <div class="eventContainer">
+              <div class="form-horizontal">
 
                 <div class="form-group"> 
-                <div class="col-sm-7 col-sm">
-                <span>Enter your activity details</span>
-                  </div>
-                  <div class="col-sm-7 col-sm">
-                    <input type="text" class="form-control enterName" placeholder="Name">
-                  </div>
-                  <div class="col-sm-7 col-sm">
-                    <input type="number" class="form-control enterTime" placeholder="Length in minutes">
-                  </div>
-                  <div class="col-sm-1 col-sm">
-                  <span>In minutes</span>
-                  </div>
-                  <div class="col-sm-7 col-sm">
-                    <select>
+
+                <label>Enter your activity details:</label>
+
+
+                    <input type="text" class="form-control enterName inputData" placeholder="Name">
+
+
+                    <input type="number" class="form-control enterTime inputData" placeholder="Length in minutes">
+
+
+                    <select class="inputData">
                         <option value="" disabled selected>Type</option>
                         <option value="presentation">Presentation</option>
                         <option value="groupWork">Group work</option>
                         <option value="discussion">Discussion</option>
                         <option value="break">Break</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-7 col-sm">
-                    <input type="text" class="form-control enterDescription" placeholder="Description">
-                  </div>
-                  <div class="col-sm-2 col-sm">
-                  <button id="cancelActivity" type="button" class="btn btn">Cancel</button>
-                  </div>
-                  <div class="col-sm-2 col-sm">
-                  <button id="createActivity" type="button" class="btn btn">Create</button>
-                  </div>
+                    </select>                    
+                  <input type="text" class="form-control enterDescription inputData" placeholder="Description">
+
+
                 </div>
 
               </div>
-              <div class="container graph">
 
-              </div>
             </div>
-            <div class="container schedule"></div>
-        </div>
-		<div id="activitiesView" class="container">
+
+       </div>
+
+      </div>
+      <div class="modal-footer">
+        <button id="cancelActivity" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="createActivity" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+		<div id="activitiesViewWrapper" class="container">
+				<div class="row"><div class="col-xs-12">				<div id="addAnActivity" type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#myModal">+ Add an activity</div></div></div>
+		<div id="activitiesView" class="container"></div>
+
 		</div>
 		<div id="dayViewWrapper" class="container">
         <div id="day1" class="container dayView">

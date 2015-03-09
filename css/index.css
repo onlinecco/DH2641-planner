@@ -27,14 +27,17 @@ html, body{
 }
 
 
-#activitiesView{
-	margin-left: 50px;
-	margin-right: 50px;
-	background-color:white;
-	border:dashed;
+#activitiesViewWrapper{
+
 	height: 100%;
 	width: 250px;
 	display: inline-block;
+}
+
+#activitiesView{
+	border:dashed;
+	height: 90%;
+	width: 100%;
 }
 
 
@@ -46,9 +49,10 @@ html, body{
 }
 
 .schedule{
+	margin-top: 12px;
 	border:dashed;
 	width: auto;
-	height: 80%;
+	height: 77%;
 }
 .startTime{
 	width: 100%;
@@ -103,7 +107,6 @@ html, body{
 	width: auto;
 	height: 100%;
 	display: inline-block;
-	background-color: purple;
 }
 .dayView{
 	background-color:white;
@@ -113,6 +116,11 @@ html, body{
 	margin-right: 20px;
 	padding: 0;
 
+}
+
+.inputData{
+	width: 100%;
+	margin-bottom: 20px;
 }
 
 #addADay{
@@ -128,10 +136,9 @@ html, body{
 #addAnActivity{
 	background-color: green;
 	color: white;
-	width: 150px;
-	height: 30px;
-	margin-top: -40px;
-	margin-left: 60px;
+	width: 100%;
+	margin-bottom: 7px;
+
 }
 
 #createActivity{
@@ -146,4 +153,5 @@ html, body{
 
 #addActivityView{
 
+	width: 100%;
 }
