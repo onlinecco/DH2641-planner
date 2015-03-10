@@ -78,6 +78,20 @@ var dayView = function(container){
 	
 				this.days[day].find(".schedule").append(activity);
 	
+			switch (model.days[day]._activities[i].getTypeId()){
+				
+				case 0:
+					activity.attr("class","row activity presentation");
+					break;
+				case 1:
+					activity.attr("class","row activity groupwork");
+					break;
+				case 2:
+					activity.attr("class","row activity discussion");
+					break;
+				case 3:
+					activity.attr("class","row activity break");
+					break;
 			}
 
 		}

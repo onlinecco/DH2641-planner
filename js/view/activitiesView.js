@@ -13,7 +13,7 @@ var activitiesView = function(container){
 	//This function gets called when there is a change at the model
 	this.update = function(arg){	
 		container.html("");
-
+		
 		for (i = 0; i < model.parkedActivities.length; i++) { 
 			//creates a new activity
 			var activity = $("<div>");
