@@ -1,6 +1,17 @@
 var activitiesController = function(view){
-		
-		// drag and drop functionality for the activities (we might need to put this in the maincontroller to allow for cross div DnD)
+	
+	// make all divs with the class activity draggable
+	
+	/*****************************************  
+	      Observer implementation    
+	*****************************************/
+	
+	//Register an observer to the model
+	model.addObserver(this);
+	
+	//This function gets called when there is a change at the model
+	this.update = function(arg){	
+		// drag and drop functionality for the activities
 		
 		var dragSrcEl = null;
 		
@@ -9,9 +20,17 @@ var activitiesController = function(view){
 		  dragSrcEl = this;
 
 		  e.dataTransfer.effectAllowed = 'move';
-		  e.dataTransfer.setData('text/day', null); // TODO parkedActivities
-		  e.dataTransfer.setData('text/position', this.getAttribute("id"));
 		  
+		  
+		  
+		  if (this.parentNode.id == "activitiesView") { // if parent is activitiesView, set to null
+				e.dataTransfer.setData('text/day', "parked");
+		  } else if (this.parentNode.parentNode.parentNode.id == "dayViewWrapper") { // if parent is dayViewWrapper, set to id minus "day"
+			  	this.daynumber = this.parentNode.parentNode.id.substring(3);
+			  	e.dataTransfer.setData('text/day', parseInt(this.daynumber));
+		  }
+		  
+		  e.dataTransfer.setData('text/position', this.getAttribute("id")); // gets position in list
 		}
 				
 		function handleDragOver(e) {
@@ -47,14 +66,29 @@ var activitiesController = function(view){
 			// TODO: make work for other than parkedActivities
 			
 			this.oldposition = e.dataTransfer.getData('text/position');
-			this.newposition = this.getAttribute("id");
+			this.newposition = this.getAttribute("id"); 
 			this.oldcolumn = e.dataTransfer.getData('text/day');
-			this.newcolumn = null; //TODO parkedActivities
 			
-			model.moveActivity(null, this.oldposition, null, this.newposition); //TODO parkedActivities
+			if (this.parentNode.id == "activitiesView") { // if parent is activitiesView, set to null
+				this.newcolumn = "parked";
+		  	} else if (this.parentNode.parentNode.parentNode.id == "dayViewWrapper") { // if parent is dayViewWrapper, set to id minus "day"
+			  	this.daynumber = this.parentNode.parentNode.id.substring(3);
+			  	this.newcolumn = parseInt(this.daynumber);
+		  	}
 			
-			//alert("currect sequence in model: \n" + String(model.parkedActivities[0].getName()) + "\n" + String(model.parkedActivities[1].getName())+ "\n" + String(model.parkedActivities[2].getName())+ "\n" + String(model.parkedActivities[3].getName()));
-		  }
+			if(this.oldcolumn == "parked" && this.newcolumn == "parked") {
+				model.moveActivity(null, this.oldposition, null, this.newposition);
+			}else if(this.oldcolumn !== "parked" && this.newcolumn == "parked") {
+				model.moveActivity(this.oldcolumn, this.oldposition, null, this.newposition);
+			}else if(this.oldcolumn == "parked" && this.newcolumn !== "parked") {
+				model.moveActivity(null, this.oldposition, this.newcolumn, this.newposition);
+			}else if(this.oldcolumn !== "parked" && this.newcolumn !== "parked") {
+				model.moveActivity(this.oldcolumn, this.oldposition, this.newcolumn, this.newposition);
+			} else {
+				alert("fail")
+			}
+			
+		}
 		  
 		
 		  return false;
@@ -78,5 +112,8 @@ var activitiesController = function(view){
 		  col.addEventListener('drop', handleDrop, false);
 		  col.addEventListener('dragend', handleDragEnd, false);
 		});
+	}
+	this.update(1);
+		
 		
 }

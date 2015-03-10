@@ -15,66 +15,74 @@ var dayView = function(container){
 	this.addDay();
 
 
-	this.update = function(day){
-
-		if(day == undefined) return;
+	this.update = function(arg){
 		
-		var time = model.days[day]._start;
+		// clear all the schedule containers
+		this.schedules = container.find(".schedule");
+		this.schedules.html("");
 
-		this.days[day].find(".startTime").html(model.days[day].getStart());
-		this.days[day].find(".endTime").html(model.days[day].getEnd());
-		this.days[day].find(".totalLength").html(model.days[day].getTotalLength());
-
-		for(i = 0; i< model.days[day]._activities.length; i++){
-			var activity = $("<div>");
-
-			activity.attr("id" ,i);
-
-			switch (model.days[day]._activities[i].getTypeId()){
-				case 0:
-					activity.attr("class","row activity presentation");
-					break;
-				case 1:
-					activity.attr("class","row activity groupwork");
-					break;
-				case 2:
-					activity.attr("class","row activity discussion");
-					break;
-				case 3:
-					activity.attr("class","row activity break");
-					break;
+		//refill the schedule container
+		
+		for(day = 0; day< model.days.length; day++){
+			
+			//refill the day
+			
+			var time = model.days[day]._start;
+	
+			this.days[day].find(".startTime").html(model.days[day].getStart());
+			this.days[day].find(".endTime").html(model.days[day].getEnd());
+			this.days[day].find(".totalLength").html(model.days[day].getTotalLength());
+			
+			for(i = 0; i< model.days[day]._activities.length; i++){
+				var activity = $("<div>");
+	
+				activity.attr("id" ,i);
+				
+				//drag and drop functionality
+				activity.attr("draggable","true");
+	
+				switch (String(model.days[day]._activities[i].getType())){
+					case "Presentation":
+						activity.attr("class","row activity presentation");
+						break;
+					case "Group Work":
+						activity.attr("class","row activity groupwork");
+						break;
+					case "Discussion":
+						activity.attr("class","row activity discussion");
+						break;
+					case "Break":
+						activity.attr("class","row activity break");
+						break;
+					default:
+						activity.attr("class","row activity ");
+						break;
+				}
+	
+				var start = time;
+				time = time + model.days[day]._activities[i].getLength();
+				start = Math.floor(start/60) + ":" + start % 60;
+				var start_time = $("<div>"); 
+				start_time.attr("id","start_time"); 
+				start_time.attr("class","col-xs-3");
+				start_time.html(start);
+	
+				var name = $("<div>"); 
+				name.attr("id","name"); 
+				name.attr("class","col-xs-9");
+	
+				name.html(model.days[day]._activities[i].getName());
+	
+				activity.append(start_time);
+				activity.append(name);
+	
+				this.days[day].find(".schedule").append(activity);
+	
 			}
-
-			var start = time;
-			time = time + model.days[day]._activities[i].getLength();
-			start = Math.floor(start/60) + ":" + start % 60;
-			var start_time = $("<div>"); 
-			start_time.attr("id","start_time"); 
-			start_time.attr("class","col-xs-3");
-			start_time.html(start);
-
-			var name = $("<div>"); 
-			name.attr("id","name"); 
-			name.attr("class","col-xs-9");
-
-			name.html(model.days[day]._activities[i].getName());
-
-			activity.append(start_time);
-			activity.append(name);
-
-			this.days[day].find(".schedule").append(activity);
-
-
 
 		}
 	}
 
-
 	this.update(0);
-
-
-
-	
-
 
 }
