@@ -95,8 +95,8 @@ var dayView = function(container){
 			}
 
 		}
+		}
 	}
-
 	this.update(0);
 
 }
