@@ -56,7 +56,7 @@ var activitiesView = function(container){
 	//This function gets called when there is a change at the model
 	this.update = function(arg){	
 		container.html("");
-
+		
 		for (i = 0; i < model.parkedActivities.length; i++) { 
 			//creates a new activity
 			var activity = $("<div>");
@@ -66,18 +66,20 @@ var activitiesView = function(container){
 			
 			//drag and drop functionality
 			activity.attr("draggable","true");
+			alert(String(model.parkedActivities[i].getType()));
 			
-			switch (model.parkedActivities[i].getTypeId()) {
-				case 0:
+						
+			switch (String(model.parkedActivities[i].getType())) {
+				case "Presentation":
 					activity.attr("class","row activity presentation");
 					break;
-				case 1:
+				case "Group Work":
 					activity.attr("class","row activity groupwork");
 					break;
-				case 2:
+				case "Discussion":
 					activity.attr("class","row activity discussion");
 					break;
-				case 3:
+				case "Break":
 					activity.attr("class","row activity break");
 					break;
 				default:

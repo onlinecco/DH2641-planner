@@ -31,6 +31,7 @@ var dayView = function(container){
 			activity.attr("id" ,i);
 
 			switch (model.days[day]._activities[i].getTypeId()){
+				
 				case 0:
 					activity.attr("class","row activity presentation");
 					break;
