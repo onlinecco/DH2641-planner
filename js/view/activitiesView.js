@@ -66,7 +66,6 @@ var activitiesView = function(container){
 			
 			//drag and drop functionality
 			activity.attr("draggable","true");
-			alert(String(model.parkedActivities[i].getType()));
 			
 						
 			switch (String(model.parkedActivities[i].getType())) {
