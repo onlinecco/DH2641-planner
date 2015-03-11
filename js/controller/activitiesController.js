@@ -61,12 +61,8 @@ var activitiesController = function(view){
 		
 		  // Don't do anything if dropping the same column we're dragging.
 		  if (dragSrcEl != this) {
-			  
 			// dragSrcEl    gets the day and position where we want to drag to
-			// TODO: make work for other than parkedActivities
 			
-			this.oldposition = e.dataTransfer.getData('text/position');
-			this.newposition = this.getAttribute("id"); 
 			this.oldcolumn = e.dataTransfer.getData('text/day');
 			
 			if (this.parentNode.id == "activitiesView") { // if parent is activitiesView, set to null
@@ -75,6 +71,19 @@ var activitiesController = function(view){
 			  	this.daynumber = this.parentNode.parentNode.id.substring(3);
 			  	this.newcolumn = parseInt(this.daynumber);
 		  	}
+			
+			this.oldposition = e.dataTransfer.getData('text/position');
+			this.newposition = this.getAttribute("id"); 
+			
+			if (this.newposition == "empty") {
+				if(this.newcolumn == "parked") {
+					// make this.newposition to position last (+1 ??) of the parkedactivities
+					this.newposition = model.parkedActivities.length;
+				} else {
+					// make this.newposition to position last (+1 ??)
+					this.newposition = model.days[this.newcolumn]._activities.length +1;
+				}				
+			}
 			
 			if(this.oldcolumn == "parked" && this.newcolumn == "parked") {
 				model.moveActivity(null, this.oldposition, null, this.newposition);
@@ -85,7 +94,7 @@ var activitiesController = function(view){
 			}else if(this.oldcolumn !== "parked" && this.newcolumn !== "parked") {
 				model.moveActivity(this.oldcolumn, this.oldposition, this.newcolumn, this.newposition);
 			} else {
-				alert("fail")
+				alert("fail");
 			}
 			
 		}
@@ -112,6 +121,17 @@ var activitiesController = function(view){
 		  col.addEventListener('drop', handleDrop, false);
 		  col.addEventListener('dragend', handleDragEnd, false);
 		});
+		
+		//TODO here we make the empty col dragoverable, not draggable
+		var emptyacts = document.querySelectorAll('.emptyactivity');
+		[].forEach.call(emptyacts, function(emptyact) {
+		  emptyact.addEventListener('dragenter', handleDragEnter, false)
+		  emptyact.addEventListener('dragover', handleDragOver, false);
+		  emptyact.addEventListener('dragleave', handleDragLeave, false);
+		  emptyact.addEventListener('drop', handleDrop, false);
+		  emptyact.addEventListener('dragend', handleDragEnd, false);
+		});
+		
 	}
 	this.update(1);
 		

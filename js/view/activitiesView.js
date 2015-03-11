@@ -59,6 +59,7 @@ var activitiesView = function(container){
 			this.name.html(model.parkedActivities[i].getName());
 			
 		}
+		container.append("<div id='empty' class='row emptyactivity'> <div class='col-xs-3'> </div> <div class='col-xs-9 addemptyactivity glyphicon glyphicon-plus-sign'></div> </div>");
 		
 	}
 	this.update(0);

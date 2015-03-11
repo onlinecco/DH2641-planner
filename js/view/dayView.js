@@ -39,7 +39,7 @@ var dayView = function(container){
 				activity.attr("id" ,i);
 				
 				//drag and drop functionality
-				activity.attr("draggable","true");
+				activity.attr("draggable","true"); // TODO draggable takes the entire dayView, not only the .schedule view
 	
 				switch (String(model.days[day]._activities[i].getType())){
 					case "Presentation":
@@ -77,25 +77,13 @@ var dayView = function(container){
 				activity.append(name);
 	
 				this.days[day].find(".schedule").append(activity);
-	
-			switch (model.days[day]._activities[i].getTypeId()){
 				
-				case 0:
-					activity.attr("class","row activity presentation");
-					break;
-				case 1:
-					activity.attr("class","row activity groupwork");
-					break;
-				case 2:
-					activity.attr("class","row activity discussion");
-					break;
-				case 3:
-					activity.attr("class","row activity break");
-					break;
-			}
+			}	
+			
+			this.days[day].find(".schedule").append("<div id='empty' class='row emptyactivity'> <div class='col-xs-3'> </div> <div class='col-xs-9 addemptyactivity glyphicon glyphicon-plus-sign'></div> </div>");
 
 		}
-		}
+		
 	}
 	this.update(0);
 

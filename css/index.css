@@ -73,6 +73,23 @@ html, body{
 	margin: 0;
 }
 
+.emptyactivity {
+	opacity: .3;
+}
+
+.addemptyactivity{ 
+	background-color: white;
+	color: green;
+	
+	font-size: 2.1em;
+	display: table-cell;
+    vertical-align:middle;
+	horizontal-align:middle;
+    text-align:center;
+	
+	border: solid 3px;
+}
+
 
 /*/single activity/*/
 [draggable] {
