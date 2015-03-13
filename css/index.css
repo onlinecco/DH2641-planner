@@ -67,8 +67,33 @@ html, body{
 	height: 100%;
 	margin: 0;
 	float: right;
+	padding-left: 5px;
+	padding-right: 5px;
 }
+.subGraph{
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+.graphPre{
+	background-color: lightblue;
+}
+.graphGro{
+	background-color:lightcoral;
+}
+.graphBre{
+	background-color:lightyellow;
 
+}
+.graphDis{
+	background-color:lightgreen;
+}
+.graphBre3{
+		margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	border-bottom: 1px solid red;
+}
 .form-horizontal .form-group{
 	margin: 0;
 }
