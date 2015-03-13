@@ -15,7 +15,7 @@ var addActivityController = function(view){
 		else{
 		var z = $("#fType").val();
 		var q = $("#fDescription").val();
-		model.addParkedActivity(new Activity(x,y,z,q));
+		model.addParkedActivity(new Activity(x,parseInt(y),z,q));
 			
 			}}
 			}
