@@ -1,6 +1,5 @@
 $(function() {
 
-	createTestData();
 
 	var day = new dayView($("#dayViewWrapper"));
 	var dayContr = new dayController(day);
@@ -14,5 +13,6 @@ $(function() {
 	var activities = new activitiesView($("#activitiesView"));
 	var activitiesContr = new activitiesController(activities);
 	
+	createTestData();
 
 });
