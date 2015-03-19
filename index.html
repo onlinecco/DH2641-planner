@@ -103,6 +103,57 @@
   </div>
 </div>
 
+        <!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel2">Edit Activity</h4>
+      </div>
+      <div class="modal-body">
+              <div id="addActivityView" class="container">
+            <div class="eventContainer">
+              <div class="form-horizontal">
+
+                <div class="form-group" id="activityForm"> 
+
+                <label>Enter your activity details:</label>
+
+
+                    <input type="text" class="form-control enterName inputData" placeholder="Name" id="fName" >
+
+
+                    <input type="number" class="form-control enterTime inputData" placeholder="Length in minutes" id="fLength">
+
+
+                    <select class="inputData" id="fType">
+                        <option value="" disabled selected>Type</option>
+                        <option value="0">Presentation</option>
+                        <option value="1">Group work</option>
+                        <option value="2">Discussion</option>
+                        <option value="3">Break</option>
+                    </select>                    
+                  <input type="text" class="form-control enterDescription inputData" placeholder="Description" id="fDescription">
+
+
+                </div>
+
+              </div>
+
+            </div>
+
+       </div>
+
+      </div>
+      <div class="modal-footer">
+        <button id="cancelActivity" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="editActivity" type="submit" class="btn btn-primary" >Save changes</button> <!--data-dismiss="modal"-->
+      </div>
+    </div>
+  </div>
+</div>
+
 
 		<div id="activitiesViewWrapper" class="container">
 				<div class="row"><div class="col-xs-12">				<div id="addAnActivity" type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#myModal">+ Add an activity</div></div></div>

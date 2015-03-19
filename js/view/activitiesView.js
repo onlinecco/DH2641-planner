@@ -1,4 +1,4 @@
-var activitiesView = function(container){
+var activitiesView = function(container,activitiesContr){
 	
 	// for each activity in the list of parkedActivities, make a row with length and name of that activity, and make it of the right class (for background color coding)
 
@@ -50,6 +50,7 @@ var activitiesView = function(container){
 			activity.append(this.length);
 			activity.append(this.name);
 			
+			activitiesContr.addListenersForActivity(activity,i,-1);
 			//add the div to the view container
 			container.append(activity);
 			

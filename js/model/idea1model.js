@@ -168,7 +168,7 @@ function Model(){
 			day = new Day(8,0);
 		}
 		this.days.push(day);
-		this.notifyObservers("day");
+		this.notifyObservers();
 		return day;
 	};
 	
@@ -243,18 +243,18 @@ var model = new Model();
 // you can use this method to create some test data and test your implementation
 function createTestData(){
 	
-	model.addParkedActivity(new Activity("Introduction",10,0,""));
-	model.addParkedActivity(new Activity("Groupwork",20,1,""));
-	model.addParkedActivity(new Activity("Discussion",50,2,""));
-	model.addParkedActivity(new Activity("Break",30,3,""));
+	model.addParkedActivity(new Activity("Introduction",10,0,"description123"));
+	model.addParkedActivity(new Activity("Groupwork",20,1,"description45"));
+	model.addParkedActivity(new Activity("Discussion",50,2,"description66"));
+	model.addParkedActivity(new Activity("Break",30,3,"description66"));
 	
 	
 	model.addDay();
-	model.addActivity(new Activity("Introduction",10,0,""),0);
-	model.addActivity(new Activity("Idea 1",30,0,""),0);
-	model.addActivity(new Activity("Working in groups",35,1,""),0);
-	model.addActivity(new Activity("Idea 1 discussion",15,2,""),0);
-	model.addActivity(new Activity("Coffee break",20,3,""),0);
+	model.addActivity(new Activity("Introduction",10,0,"description"),0);
+	model.addActivity(new Activity("Idea 1",30,0,"description"),0);
+	model.addActivity(new Activity("Working in groups",35,1,"description"),0);
+	model.addActivity(new Activity("Idea 1 discussion",15,2,"description"),0);
+	model.addActivity(new Activity("Coffee break",20,3,"description"),0);
 	
 	console.log("Day Start: " + model.days[0].getStart());
 	console.log("Day End: " + model.days[0].getEnd());
